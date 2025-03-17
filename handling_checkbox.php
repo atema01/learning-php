@@ -61,25 +61,25 @@ if(isset($_POST["submit1"])){
      
 }
 //using arrays 
+$allfoods=["Pizza","Burger", "Taco", "Hotdog"];
+
 if(isset($_POST["submit2"])){
     echo "USING ARRAYS<br>";
     $foods=null;
     if(isset($_POST["foods"])){
  $foods=$_POST["foods"];
     foreach($foods as $food){
-        $allfoods=["Pizza","Burger", "Taco", "Hotdog"];
 
         echo "you like ". $food."<br>";
-        foreach(array_diff( $allfoods,$foods) as $unselectedfoods){
-            echo "you DON'T like ". $unselectedfoods."<br>";
 
-        }
-       
     }
     }
    
-    else echo "you didn't choose any food";
+    foreach(array_diff( $allfoods,$foods) as $unselectedfoods){
+        echo "you DON'T like ". $unselectedfoods."<br>";
 
+    }
+   
 }
 
 
